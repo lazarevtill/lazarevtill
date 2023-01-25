@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @lazarevtill
 - 👀 I’m interested in DevOps and Sre stuff
 - 🌱 I’m currently working on my homelab
-- 💞️ I’m looking to collaborate on some vm stuff and offline voice assistant
+- 💞️ I’m looking to collaborate on some home lab and offline voice assistant
 - 📫 How to reach me @lazarevtill in telegram
 
 <!---
