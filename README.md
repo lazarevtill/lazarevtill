@@ -1,21 +1,18 @@
-- 👋 Hi, I’m @lazarevtill
-- 👀 I’m interested in DevOps and Sre stuff
-- 🌱 I’m currently working on my homelab
-- 💞️ I’m looking to collaborate on some home lab and offline voice assistant
-- 📫 How to reach me @lazarevtill in telegram
+<div align="center">
 
-<!---
-lazarevtill/lazarevtill is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+### 👋 Hi, I’m Till — DevOps, server enthusiast & self-hosting addict
 
+---
 
-<a href="https://github.com/lazarevtill">
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lazarevtill&theme=transparent" />
-</a>
-<a href="https://github.com/lazarevtill">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=lazarevtill&hide_border=true&card_width=338&theme=transparent"/>
-</a>
-<a href="https://github.com/lazarevtill">
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=lazarevtill&theme=transparent"/>
-</a>
+- 🏢 **DevOps Manager** @ Plata
+- 🖥️ **AI GPU setups** (baremetal, Docker, Kubernetes)
+- ⚡ **Toolbox:** Ollama, OpenWebUI, Netbird
+- 🌱 **Driven by passion for self-hosting and automating everything**
+- 🏷️ *Just a man with servers and ideas*
+
+---
+
+![Till's GitHub Stats](https://github-readme-stats.vercel.app/api?username=lazarevtill&show_icons=true&theme=github_dark)
+![Till's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=lazarevtill&layout=compact&theme=github_dark)
+
+</div>
