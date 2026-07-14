@@ -35,7 +35,4 @@ From work I've built and run — zero to production, and operated end to end.
 
 *Just a man with servers and ideas.*
 
-![Till's GitHub Stats](https://github-readme-stats.vercel.app/api?username=lazarevtill&show_icons=true&theme=github_dark)
-![Till's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=lazarevtill&layout=compact&theme=github_dark)
-
 </div>
