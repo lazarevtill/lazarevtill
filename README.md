@@ -30,36 +30,54 @@ Two parts I'd point at:
 
 GPU capacity runs on HAMi sharing over 8×H100, with selectable VRAM slices and admission-time quota checks that refuse with the actual numbers instead of hanging.
 
-## Systems I build & run
+## Things I've built
 
 <table>
 <tr><td width="50%" valign="top">
 
-**`lazarev.cloud` — self-hosted platform**
+### [ServerGlass](https://github.com/lazarevtill/ServerGlass)
 
-A 9-node Proxmox cluster with NVIDIA GPU and Ryzen AI NPU passthrough for local ML workloads, fully infrastructure-as-code across 11 OpenTofu providers. Vault internal PKI and SSO everywhere, a self-hosted CI/CD supply chain (GitLab, Harbor, Nexus, Renovate), Prometheus/Grafana observability, 3-2-1 backups.
+Agentless SSH server monitoring for macOS, iOS, Android, Windows and Linux. One Rust core owns the parsing, scheduling, rate maths and health verdicts; each platform contributes only a view.
 
-`Proxmox · OpenTofu · Vault · GitLab CI · Harbor`
+A full refresh costs exactly **one** network round trip however many collectors are enabled — and a test fails if that ever stops being true. Nothing is installed, written or modified on a monitored host; no sample ever reaches disk.
+
+`Rust · SwiftUI · Kotlin · GTK4 · WinUI 3 · UniFFI`
 
 </td><td width="50%" valign="top">
 
-**Local LLM agent memory stack**
+### [Morgan](https://github.com/lazarevtill/Morgan)
 
-External memory for LLM agents — vector storage and retrieval with reranking, persistent agent memory and a fast cache layer. Benchmarked against current research, running entirely on local hardware.
+A project-scoped memory for AI tools, consolidated into dated facts by a local model. Tell it something from any repository; any MCP client recalls it, scoped to the repo it is working in.
 
-`Qdrant · Mem0 · Valkey · Qwen3 embeddings + reranker`
+Hybrid recall (sqlite-vec + FTS5, Cyrillic-aware) fused by reciprocal rank, facts with validity intervals rather than overwrites, and a labelled probe suite that scores recall@k instead of assuming it works.
+
+`Python · SQLite · MCP · llama.cpp · RAG`
 
 </td></tr>
-<tr><td colspan="2" valign="top">
+<tr><td width="50%" valign="top">
 
-**Local AI media pipeline**
+### [strix-halo-llm](https://github.com/lazarevtill/strix-halo-llm)
 
-A ComfyUI image and video generation pipeline tuned for AMD Ryzen AI hardware on ROCm, with a fully autonomous build and setup flow — large generative models on my own silicon, without a cloud bill.
+Measured llama.cpp tuning for AMD Strix Halo — the real memory ceiling (~109 GB, not the 96 GB the BIOS implies), the flags that matter, and five "obvious" optimisations that measurement killed.
 
-`ComfyUI · ROCm · Ryzen AI MAX+ 395`
+Shipped with the eval harness and a catalogue of fourteen harness bugs, each with the believable wrong number it produced. When the suites turned out to be measuring the tasks instead of the models, the numbers were withdrawn rather than published.
+
+`PowerShell · Python · Vulkan · benchmarking`
+
+</td><td width="50%" valign="top">
+
+### `lazarev.cloud` — self-hosted platform
+
+A 9-node Proxmox cluster with NVIDIA GPU and Ryzen AI NPU passthrough for local ML workloads, fully infrastructure-as-code across 11 OpenTofu providers.
+
+Vault internal PKI and SSO everywhere, a self-hosted CI/CD supply chain (GitLab, Harbor, Nexus, Renovate), Prometheus/Grafana observability, 3-2-1 backups.
+
+`Proxmox · OpenTofu · Vault · GitLab CI · Harbor`
 
 </td></tr>
 </table>
+
+Also: [fingerprint-manager](https://github.com/lazarevtill/fingerprint-manager), a Qt desktop front end for `fprintd`.
 
 ## Background
 
@@ -72,7 +90,7 @@ Seven years of secure, scalable platforms across bare-metal Linux and AWS. Befor
 `Kubernetes (EKS & bare-metal)` `Kubeflow` `MLflow` `KServe` `Istio` `Kyverno` `HAMi / NVIDIA H100`
 `AWS` `Snowflake` `OpenTofu / Terraform` `Helm` `Argo CD` `GitLab CI` `Proxmox`
 `HashiCorp Vault (PKI/OIDC)` `Keycloak` `CrowdSec` `Prometheus / VictoriaMetrics / Grafana` `OpenTelemetry`
-`Python` `Go` `Bash` `Linux` `Cisco networking`
+`Python` `Go` `Rust` `Bash` `Linux` `Cisco networking`
 
 </div>
 
