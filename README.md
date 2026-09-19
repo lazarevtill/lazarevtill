@@ -19,15 +19,6 @@ Platform and MLOps engineer, 7+ years. Founding MLOps hire at a fintech serving 
 
 The systems on this profile are mine: designed, built and operated end to end, not by a company. Most of my day-to-day code lives on a self-hosted GitLab behind [lazarev.cloud](https://lazarev.cloud); this is the public slice.
 
-<div align="center">
-
-| | | | |
-|:--:|:--:|:--:|:--:|
-| **7+ yrs** | **50%+** | **150k/s** | **9 nodes** |
-| building platforms | cloud cost cut | metrics ingested | self-hosted, all as code |
-
-</div>
-
 ## What I work on
 
 **ML platform, at work.** Built from zero: Snowflake and S3 data through notebooks, training, benchmarking and versioning to a served model — Kubeflow, MLflow, KServe, Langfuse and Label Studio on EKS, behind Keycloak SSO and delivered by Argo CD. Five team workspaces run on it.
@@ -59,28 +50,20 @@ External memory for LLM agents — vector storage and retrieval with reranking, 
 `Qdrant · Mem0 · Valkey · Qwen3 embeddings + reranker`
 
 </td></tr>
-<tr><td width="50%" valign="top">
+<tr><td colspan="2" valign="top">
 
 **Local AI media pipeline**
 
-A ComfyUI image and video generation pipeline tuned for AMD Ryzen AI hardware on ROCm, with a fully autonomous build and setup flow. Large generative models without a cloud bill.
+A ComfyUI image and video generation pipeline tuned for AMD Ryzen AI hardware on ROCm, with a fully autonomous build and setup flow — large generative models on my own silicon, without a cloud bill.
 
 `ComfyUI · ROCm · Ryzen AI MAX+ 395`
-
-</td><td width="50%" valign="top">
-
-**Edge & IoT**
-
-ESP32 environmental monitoring with live dashboards, and a Raspberry Pi security camera with servo control wired into n8n automation. Small systems, fully owned.
-
-`ESP32 · Raspberry Pi · n8n`
 
 </td></tr>
 </table>
 
 ## Background
 
-Seven years of secure, scalable platforms across bare-metal Linux and AWS. Before the founding MLOps role I was DevOps Manager at the same fintech, standardising Kubernetes across multi-region clusters for 6+ teams. Earlier: a 50%+ cut in company-wide AWS spend and 60% faster deployments at a Dubai real-estate group, and observability handling 150,000 metrics per second at a US e-commerce company.
+Seven years of secure, scalable platforms across bare-metal Linux and AWS. Before the founding MLOps role I was DevOps Manager at the same fintech, standardising Kubernetes across multi-region clusters for 6+ teams and cutting allocated CPU and memory by ~10%. Earlier: a 50%+ cut in company-wide AWS spend and 60% faster deployments at a Dubai real-estate group, and observability handling 150,000 metrics per second at a US e-commerce company.
 
 ## Toolbox
 
