@@ -1,31 +1,97 @@
-`// software & platform engineer`
+<div align="center">
+
+`// platform & MLOps engineer`
 
 # Anatoly (Till) Lazarev
 
-I build software and the cloud underneath it — applications, MLOps platforms, Kubernetes, observability, and security. Based in Novi Sad, Serbia. The systems here are mine: designed, built, and operated end to end by me — not a company.
+**I build the platforms other engineers ship on** — ML infrastructure, Kubernetes, GPU, and the security underneath.
 
-Most of my day-to-day code lives on a self-hosted GitLab behind [lazarev.cloud](https://lazarev.cloud); this profile is the public slice.
+[![Website](https://img.shields.io/badge/lazarev.cloud-0b0b0b?style=flat-square&logo=icloud&logoColor=white)](https://lazarev.cloud)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0b0b0b?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lazarevtill)
+[![Email](https://img.shields.io/badge/till@lazarev.cloud-0b0b0b?style=flat-square&logo=maildotru&logoColor=white)](mailto:till@lazarev.cloud)
+[![Location](https://img.shields.io/badge/Novi%20Sad,%20Serbia-0b0b0b?style=flat-square&logo=googlemaps&logoColor=white)](#)
 
-## A few numbers
+</div>
 
-**7+** years building platforms · **50%+** cloud cost cut · **75%** faster builds · **150k+** metrics/sec
+---
 
-From work I've built and run — zero to production, and operated end to end.
+Platform and MLOps engineer, 7+ years. Founding MLOps hire at a fintech serving millions of users, where I designed and built the company's ML platform and still run it as its sole engineer — from the EKS clusters and H100s up to the SDK its users write code against.
+
+The systems on this profile are mine: designed, built and operated end to end, not by a company. Most of my day-to-day code lives on a self-hosted GitLab behind [lazarev.cloud](https://lazarev.cloud); this is the public slice.
+
+<div align="center">
+
+| | | | |
+|:--:|:--:|:--:|:--:|
+| **7+ yrs** | **50%+** | **150k/s** | **9 nodes** |
+| building platforms | cloud cost cut | metrics ingested | self-hosted, all as code |
+
+</div>
+
+## What I work on
+
+**ML platform, at work.** Built from zero: Snowflake and S3 data through notebooks, training, benchmarking and versioning to a served model — Kubeflow, MLflow, KServe, Langfuse and Label Studio on EKS, behind Keycloak SSO and delivered by Argo CD. Five team workspaces run on it.
+
+Two parts I'd point at:
+
+- **Serving with provenance, no tenant credentials.** A custom KServe storage container resolves an `mlflow://` reference through the tracking server using the team's own token, so no object-storage keys exist in tenant namespaces — with a Kyverno admission policy requiring every InferenceService to reference a registered model version.
+- **An SDK, CLI and MCP server.** One authenticated entry point for notebooks, training, the registry, serving and status — usable from a laptop over OIDC with no kubeconfig. State-changing operations sit behind an explicit opt-in, because an agent that can redeploy production by accident is a design mistake, not a feature.
+
+GPU capacity runs on HAMi sharing over 8×H100, with selectable VRAM slices and admission-time quota checks that refuse with the actual numbers instead of hanging.
 
 ## Systems I build & run
 
-- **lazarev.cloud — self-hosted production platform.** My own infrastructure, and my proving ground: a 9-node Proxmox cluster with NVIDIA GPU and Ryzen AI NPU passthrough for local ML workloads, provisioned end to end as code with OpenTofu. Vault-issued internal PKI and SSO across every service, a fully self-hosted CI/CD supply chain (GitLab, Harbor, Nexus, Renovate), Prometheus/Grafana observability, automated 3-2-1 backups.
-- **Local LLM agent memory stack.** A production-grade external memory system for LLM agents — vector storage and retrieval with reranking, persistent agent memory, and a fast cache layer. Built and benchmarked against current research, running entirely on local hardware. `Qdrant · Mem0 · Valkey · Qwen3 embeddings + reranker`
-- **Local AI media pipeline.** A ComfyUI-based image/video generation pipeline tuned for AMD Ryzen AI hardware (ROCm), with a fully autonomous build/setup flow. Large generative models without a cloud bill. `ComfyUI · ROCm · AMD Ryzen AI MAX+ 395`
-- **Edge & IoT.** ESP32 environmental monitoring with live dashboards, and a Raspberry Pi security camera with servo control wired into n8n automation. Small systems, fully owned. `ESP32 · Raspberry Pi · n8n`
+<table>
+<tr><td width="50%" valign="top">
+
+**`lazarev.cloud` — self-hosted platform**
+
+A 9-node Proxmox cluster with NVIDIA GPU and Ryzen AI NPU passthrough for local ML workloads, fully infrastructure-as-code across 11 OpenTofu providers. Vault internal PKI and SSO everywhere, a self-hosted CI/CD supply chain (GitLab, Harbor, Nexus, Renovate), Prometheus/Grafana observability, 3-2-1 backups.
+
+`Proxmox · OpenTofu · Vault · GitLab CI · Harbor`
+
+</td><td width="50%" valign="top">
+
+**Local LLM agent memory stack**
+
+External memory for LLM agents — vector storage and retrieval with reranking, persistent agent memory and a fast cache layer. Benchmarked against current research, running entirely on local hardware.
+
+`Qdrant · Mem0 · Valkey · Qwen3 embeddings + reranker`
+
+</td></tr>
+<tr><td width="50%" valign="top">
+
+**Local AI media pipeline**
+
+A ComfyUI image and video generation pipeline tuned for AMD Ryzen AI hardware on ROCm, with a fully autonomous build and setup flow. Large generative models without a cloud bill.
+
+`ComfyUI · ROCm · Ryzen AI MAX+ 395`
+
+</td><td width="50%" valign="top">
+
+**Edge & IoT**
+
+ESP32 environmental monitoring with live dashboards, and a Raspberry Pi security camera with servo control wired into n8n automation. Small systems, fully owned.
+
+`ESP32 · Raspberry Pi · n8n`
+
+</td></tr>
+</table>
 
 ## Background
 
-7+ years building secure, scalable platforms across bare-metal Linux and AWS. The founding MLOps engineer at a fintech, where the ML platform was built from scratch — multiple ML teams training, versioning, and deploying independently on Kubernetes, with SSO, Vault-managed secrets, and GPU/CPU isolation. Prior infrastructure roles spanned large-scale observability, cloud cost and build-time optimization, and the security plumbing underneath.
+Seven years of secure, scalable platforms across bare-metal Linux and AWS. Before the founding MLOps role I was DevOps Manager at the same fintech, standardising Kubernetes across multi-region clusters for 6+ teams. Earlier: a 50%+ cut in company-wide AWS spend and 60% faster deployments at a Dubai real-estate group, and observability handling 150,000 metrics per second at a US e-commerce company.
 
 ## Toolbox
 
-`Kubernetes (EKS & bare-metal) · Istio · OpenTofu/Terraform · Helm · AWS · Proxmox · HashiCorp Vault (PKI/OIDC) · Kyverno · CrowdSec · GitLab CI / ArgoCD · Prometheus / VictoriaMetrics / Grafana · Python · Cisco networking (CCNA)`
+<div align="center">
+
+`Kubernetes (EKS & bare-metal)` `Kubeflow` `MLflow` `KServe` `Istio` `Kyverno` `HAMi / NVIDIA H100`
+`AWS` `Snowflake` `OpenTofu / Terraform` `Helm` `Argo CD` `GitLab CI` `Proxmox`
+`HashiCorp Vault (PKI/OIDC)` `Keycloak` `CrowdSec` `Prometheus / VictoriaMetrics / Grafana` `OpenTelemetry`
+`Python` `Go` `Bash` `Linux` `Cisco networking`
+
+</div>
 
 ---
 
