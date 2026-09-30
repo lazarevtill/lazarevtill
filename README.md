@@ -79,6 +79,19 @@ Vault internal PKI and SSO everywhere, a self-hosted CI/CD supply chain (GitLab,
 
 Also: [fingerprint-manager](https://github.com/lazarevtill/fingerprint-manager), a Qt desktop front end for `fprintd`.
 
+## Upstream contributions
+
+Fixes I found while running the ML platform I built in production, sent back to the projects it is built on.
+
+| Project | Change | Status |
+|---|---|---|
+| **MLflow** | [Eagerly load tags, params and metrics in `search_logged_models`](https://github.com/mlflow/mlflow/pull/25983) — one page cost 3N+1 queries (~300 round trips at the default page size); now a constant number | ✅ merged |
+| **MLflow** | [Stop a metric filter from shrinking `search_logged_models` pages](https://github.com/mlflow/mlflow/pull/26057) — the filter join duplicated rows before `LIMIT`, so filtered pages came back short | ✅ merged |
+| **MLflow** | [Let `search_logged_models` callers skip metric values](https://github.com/mlflow/mlflow/pull/26060) — measured on a real experiment: 900 ms / 7.15 MB → 12.9 ms / 0.01 MB for the runs table | 🔄 in review |
+| **mlflow-oidc-auth** | [Serve plugin endpoints under `/ajax-api` as well as `/api`](https://github.com/mlflow-oidc/mlflow-oidc-auth/pull/303) — the MLflow UI got 404s from the auth plugin | ✅ merged |
+| **mlflow-oidc-auth** | [Skip the protobuf round-trip when a logged-model page needs no filtering](https://github.com/mlflow-oidc/mlflow-oidc-auth/pull/371) | ✅ merged |
+| **Kubeflow Pipelines** | [Make the compiled-template Istio sidecar default configurable](https://github.com/kubeflow/pipelines/pull/14468) — on STRICT mTLS meshes no pipeline could run | 🔄 in review |
+
 ## Background
 
 Seven years of secure, scalable platforms across bare-metal Linux and AWS. Before the founding MLOps role I was DevOps Manager at the same fintech, standardising Kubernetes across multi-region clusters for 6+ teams and cutting allocated CPU and memory by ~10%. Earlier: a 50%+ cut in company-wide AWS spend and 60% faster deployments at a Dubai real-estate group, and observability handling 150,000 metrics per second at a US e-commerce company.
